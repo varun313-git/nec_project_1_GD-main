@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gender Detection Demo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <p class="eyebrow">ML Classification Demo</p>
+        <h1>Predict gender from a name</h1>
+        <p class="lede">
+          Type a name, send it to the Flask API, and get an instant prediction
+          from the trained model.
+        </p>
+      </section>
+
+      <section class="card">
+        <form id="predict-form" class="form">
+          <label for="name">Name</label>
+          <div class="row">
+            <input
+              id="name"
+              name="name"
+              type="text"
+              placeholder="Try Sneha or Jairam"
+              autocomplete="off"
+              required
+            />
+            <button type="submit">Predict</button>
+          </div>
+        </form>
+
+        <div id="result" class="result muted">
+          Enter a name to see the prediction.
+        </div>
+      </section>
+    </main>
+
+    <script src="{{ url_for('static', filename='app.js') }}"></script>
+  </body>
+</html>
